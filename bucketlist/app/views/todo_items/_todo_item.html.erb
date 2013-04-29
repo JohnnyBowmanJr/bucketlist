@@ -1,0 +1,7 @@
+<div class="todo-item <%= todo_item.completed? ? 'completed' : '' %>">
+	<%= todo_item.name %>
+
+	<div class="info">
+		<%= todo_item.created_at %>
+	</div>
+</div>
