@@ -24,7 +24,7 @@ class TodoItemsControllerTest < ActionController::TestCase
 
 		context "GET to show" do
 			setup do
-				get :index, :id => 1
+				get :show, :id => 1
 			end
 
 			should "give a HTTP 200" do

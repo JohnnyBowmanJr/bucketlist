@@ -1,3 +1,23 @@
 // Place all the styles related to the TodoItems controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.container {
+	width: 700px;
+}
+
+.container-left {
+	float: left;
+}
+
+.container-right {
+	float: right;
+}
+
+#map-canvas {
+	width: 400px;
+	height: 300px;
+}
+
+.comments-box {
+	display: none;
+}

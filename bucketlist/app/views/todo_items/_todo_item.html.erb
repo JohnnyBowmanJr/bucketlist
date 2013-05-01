@@ -1,7 +1,23 @@
-<div class="todo-item <%= todo_item.completed? ? 'completed' : '' %>">
-	<%= todo_item.name %>
+<div class="todo-item">
+	<div class="todo-item-title" />
+		<h1><%= todo_item.name %></h1>
+	</div>
 
-	<div class="info">
-		<%= todo_item.created_at %>
+	<div class="comments-box">	
+		<div class="location-box">
+			Location: <%= todo_item.destination.name %><br />
+		</div>
+		<div class="comments-<%=todo_item.id%>">
+
+			<% todo_item.comments.each do |comment| %>
+				<%= render comment %>
+			<% end %>
+		</div>
+			<%= render :partial => 'comments/form', :locals => { :item => todo_item } %>
+
+		<div class="info">
+			<%= todo_item.created_at %>
+		</div>
 	</div>
 </div>
+

@@ -2,14 +2,16 @@ class CommentsController < ApplicationController
 
 	def index
 		@comments = Comment.all
-		render 'index'
 	end
 
 	def create
     @comment = Comment.new(params[:comment])
     @comment.save!
-    render @comment
+  	# respond_to do |format|
+  	# 	format.html
+  	# 	format.js
+    		render :template => 'comments/create', :content_type => 'text/javascript'
+		# 	end
+		# end
   end
-
-
 end

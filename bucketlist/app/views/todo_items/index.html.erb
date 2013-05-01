@@ -1,1 +1,19 @@
-Todo Before I die
+<div>
+	Todo Before I Die
+</div>
+
+<div class="container cf">
+	<div class="container-left cf">
+		<div class="items-list">
+			<% @items.each do |item| %>
+				<%= render item %>
+			<% end %>
+		</div>
+	</div>
+	<div class="container-right">
+		<div class="items-form">
+			<%= render :partial => 'todo_items/form' %>
+		</div>
+		<div id="map-canvas"></div>
+	</div>
+</div>

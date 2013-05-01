@@ -6,13 +6,12 @@ class TodoItemsController < ApplicationController
 	end
 
 	def create
-		@todo_item = TodoItem.new(params[:comment])
-		@todo_item.save
-		render 'index'
+		@item = TodoItem.new(params[:todo_item])
+		@item.save	
+		render :partial => 'todo_items/todo_item', :locals => { :todo_item => @item }, :content_type => 'text/html'
 	end
 
 	def show
-		@item = TodoItem.find(params[:id])
-		render :show
+		@item = TodoItem.find(params[:id])	
 	end
 end
