@@ -3,6 +3,7 @@ Bucketlist::Application.routes.draw do
   # first created -> highest priority.
 resources :comments
 resources :todo_items
+resources :destinations
 
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'

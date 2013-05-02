@@ -1,4 +1,4 @@
-	class TodoItem < ActiveRecord::Base
+class TodoItem < ActiveRecord::Base
   attr_accessible :completed, :name, :location, :latitude, :longitude, :destination_id
   
   geocoded_by :cool_beans

@@ -9,8 +9,8 @@
 		<%= f.text_field :name %>
 	</div>
 	<div class="field">
-		<%= f.label :destination_id %>: 
- 		<%=  f.select("destination_id", Destination.find(:all).collect {|d|[d.name, d.id]})%>
+		<%= f.label :destination_id %> 
+ 		<%= f.select("destination_id", Destination.find(:all).collect {|d|[d.name, d.id]})%>
 	</div>
 	<div class="field">
 		<%= f.label :location %>

@@ -1,11 +1,17 @@
 <div class="todo-item">
-	<div class="todo-item-title" />
-		<h1><%= todo_item.name %></h1>
+	
+	<div class="todo-item-title">
+		<h3><%= link_to todo_item.name, "#" %></h3>
 	</div>
-
-	<div class="comments-box">	
+	<div class="toggle-comments">	
 		<div class="location-box">
 			Location: <%= todo_item.destination.name %><br />
+			<div class="latitude">
+				<p><%= todo_item.latitude %></p>
+			</div>
+			<div class="longitude">	
+				<p><%= todo_item.longitude %></p>
+			</div>
 		</div>
 		<div class="comments-<%=todo_item.id%>">
 

@@ -1,19 +1,25 @@
-<div>
-	Todo Before I Die
+<div class="index-title sixteen columns">
+	<h1>Things To Do Before I Die</h1>
+	<%= link_to 'Sort by Title', todo_items_path(:order => :name), :remote => true %> | <%= link_to 'Sort by Created At', todo_items_path(:order => :created_at), :remote => true %>
 </div>
 
-<div class="container cf">
-	<div class="container-left cf">
-		<div class="items-list">
+<div class="sixteen columns">
+	<div class="twelve columns alpha">
+		<div class="items-list five columns alpha">
 			<% @items.each do |item| %>
 				<%= render item %>
 			<% end %>
 		</div>
+		<div class="seven columns omega">
+			<div id="map-canvas"></div>
+		</div>
 	</div>
-	<div class="container-right">
+	<div class="four columns omega">
 		<div class="items-form">
 			<%= render :partial => 'todo_items/form' %>
 		</div>
-		<div id="map-canvas"></div>
+		<div id="destinations-form">
+			<%= render :partial => 'destinations/form' %>
+		</div>
 	</div>
 </div>

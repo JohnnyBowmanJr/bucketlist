@@ -9,15 +9,16 @@
   <script type="text/javascript">
   	$(function(){
   		initMap();
-  			<% TodoItem.all.each do |item| %>
-  				addMarker(<%=item.latitude%>, <%=item.longitude%>, '<%=item.name%>');
-				<% end %>
+			<% TodoItem.all.each do |item| %>
+				addMarker(<%=item.latitude%>, <%=item.longitude%>, '<%=item.name%>');
+			<% end %>
   	});
 	</script>
 </head>
 <body>
-
-<%= yield %>
+  <div class="container">
+    <%= yield %>
+  </div>
 
 </body>
 </html>

@@ -1,0 +1,12 @@
+<div class="new-destination">
+	<h5>New Destination</h5>
+</div>
+
+<%= form_for Destination.new, :remote => true do |f| %>
+
+	<div class="field">
+		<%= f.text_field :name %>
+	</div>
+	
+	<%= f.submit %>
+<% end %>
