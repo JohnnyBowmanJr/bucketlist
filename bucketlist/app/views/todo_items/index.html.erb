@@ -1,6 +1,6 @@
 <div class="index-title sixteen columns">
 	<h1>Things To Do Before I Die</h1>
-	<%= link_to 'Sort by Title', todo_items_path(:order => :name), :remote => true %> | <%= link_to 'Sort by Created At', todo_items_path(:order => :created_at), :remote => true %>
+	<%= link_to 'Sort by Title', todo_items_path(:order => :name), :remote => true %> | <%= link_to 'Sort by Created At', todo_items_path(:order => :created_at), :remote => true %> | <input type="text" id="search" placeholder="Search for a Todo item"> 
 </div>
 
 <div class="sixteen columns">

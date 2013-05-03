@@ -13,6 +13,7 @@
 				addMarker(<%=item.latitude%>, <%=item.longitude%>, '<%=item.name%>');
 			<% end %>
   	});
+    items = <%= raw(TodoItem.all.to_json) %>;
 	</script>
 </head>
 <body>
