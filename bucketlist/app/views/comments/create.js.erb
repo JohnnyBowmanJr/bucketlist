@@ -1,1 +1,5 @@
-$(".comments-<%=@comment.todo_item_id%>").append("<%= escape_javascript(render :partial => 'comments/comment', :locals => {:comment => @comment}) %>");
+
+// render the partial _comment.html.erb, passing along a variable named comment
+// that's equal to the comment object passed from the controller. Then append the partial
+// to the html element with class "comment-[insert todo_item_id here]" 
+$(".comments-<%=@comment.todo_item_id%>").append("<%= escape_javascript(render :partial => 'comments/comment', :locals => {:comment => comment}) %>");

@@ -6,17 +6,59 @@ input#search{
 	display: inline-block;
 }
 
+.todo-item {
+	border-bottom: 1px solid #ccc;
+}
 .index-title{
 	margin: 2em 0 2em 0;
 }
 
+ol#sortable {
+	list-style-type: none;
+	padding:0px;
+	margin-left: 0px;
+
+	dt {
+		float: left;
+		margin-right: 0px;
+	}
+
+	li {
+		margin-bottom: 0px;
+	}
+}
+
+.item-position {
+	display: inline-block;
+}
+
+.todo-item-title {
+	display: inline-block;
+	margin-right: 5px;
+}
+
+.like-button {
+	display: inline-block;
+}
+
 #map-canvas {
-	width: 400px;
+	width: 100%;
 	height: 300px;
 }
 
+#chart {
+	width: 100%;
+	height: 300px;
+}
+
+
+
 .toggle-comments {
 	display: none;
+}
+
+.info {
+	margin-top: -23px;
 }
 
 .latitude{

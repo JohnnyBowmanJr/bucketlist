@@ -9,7 +9,7 @@ $(document).ready(function() {
 		$('.items-list').html("");
 		
 		_.each(results, function(result){
-			var html = _.template(render :partial => "todo_items/todo_item", :locals => {:todo_item => item})
+			//var html = _.template(render :partial => "todo_items/todo_item", :locals => {:todo_item => item});
 		});
 	});
 });

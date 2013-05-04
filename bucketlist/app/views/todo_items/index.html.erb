@@ -1,17 +1,35 @@
 <div class="index-title sixteen columns">
 	<h1>Things To Do Before I Die</h1>
-	<%= link_to 'Sort by Title', todo_items_path(:order => :name), :remote => true %> | <%= link_to 'Sort by Created At', todo_items_path(:order => :created_at), :remote => true %> | <input type="text" id="search" placeholder="Search for a Todo item"> 
+	<%= link_to 'Sort by Title', todo_items_path(:order => :name), :remote => true %> | <%= link_to 'Sort by Created At', todo_items_path(:order => :created_at), :remote => true %> | <%= link_to 'Sort by Priority', todo_items_path(:order => :position), :remote => true %> <input type="text" id="search" placeholder="Search for a Todo item"> 
 </div>
 
 <div class="sixteen columns">
 	<div class="twelve columns alpha">
 		<div class="items-list five columns alpha">
-			<% @items.each do |item| %>
-				<%= render item %>
-			<% end %>
+			<ol id="sortable">
+				<% @items.each do |item| %>
+					<li>
+						<%= render item %>
+					</li>
+				<% end %>
+			</ol>
 		</div>
 		<div class="seven columns omega">
 			<div id="map-canvas"></div>
+			<div id="chart"></div>
+			<script>
+				// function drawDonut(data) {
+				// 	new Morris.Donut({
+				// 		// ID of the element in which to draw the chart.
+				// 		element: '#chart',
+				// 		data: [
+				// 			{label: "Download Sales", value: 12},
+				// 			{label: "In-Store Sales", value: 30},
+				// 			{label: "Mail-Order Sales", value: 20}
+				// 		]
+				// 	});
+				// }
+			</script>
 		</div>
 	</div>
 	<div class="four columns omega">

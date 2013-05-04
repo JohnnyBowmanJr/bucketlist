@@ -2,6 +2,8 @@
 	<h3>New Todo Item</h3>
 </div>
 
+<!-- Create a new Todo Item. On pressing submit, 'remote => true' will send off an ajax request to 
+	Todo_items.js. It will also execute the create action in the Todo_items controller, sending all the form info to the controller in a params hash -->
 <%= form_for TodoItem.new, :remote => true do |f| %>
 
 	<div class="field">
@@ -9,13 +11,14 @@
 		<%= f.text_field :name %>
 	</div>
 	<div class="field">
-		<%= f.label :destination_id %> 
+		<%= f.label :destination_id, "City" %> 
  		<%= f.select("destination_id", Destination.find(:all).collect {|d|[d.name, d.id]})%>
 	</div>
 	<div class="field">
-		<%= f.label :location %>
-		<%= f.text_field :location %>
+		<%= f.label :location, "Location within City" %>
+		<%= f.text_field :location, :placeholder => "e.g. 'Times Square'" %>
 	</div>
 
 	<%= f.submit %>
 <% end %>
+

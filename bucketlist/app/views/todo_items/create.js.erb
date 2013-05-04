@@ -1,2 +1,9 @@
-$(".items-list").append("<%= escape_javascript(render :partial => 'todo_items/todo_item', :locals => {:todo_item => item}) %>");
+
+// render the todo_item partial (todo_item.html.erb), passing
+// an object named todo_item which is equal to the "item"
+// variable created in the controller. Append this partial to
+// the html element with ID "sortable".
+$("#sortable").append("<%= escape_javascript(render :partial => 'todo_items/todo_item', :locals => {:todo_item => item}) %>");
+
+// this is for geolocation
 addMarker(<%= item.latitude %>, <%= item.longitude %>, '<%=item.name %>');

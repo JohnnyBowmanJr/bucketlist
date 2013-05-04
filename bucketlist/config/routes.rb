@@ -2,8 +2,15 @@ Bucketlist::Application.routes.draw do
   # The priority is based upon order of creation:
   # first created -> highest priority.
 resources :comments
-resources :todo_items
+resources :todo_items do
+  member do
+    post 'like'
+  end
+end
 resources :destinations
+
+match "/todo_items/update_position" => "todo_items#update_position", :via => :post
+
 
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'

@@ -1,29 +1,43 @@
-<div class="todo-item">
-	
-	<div class="todo-item-title">
-		<h3><%= link_to todo_item.name, "#" %></h3>
-	</div>
-	<div class="toggle-comments">	
-		<div class="location-box">
-			Location: <%= todo_item.destination.name %><br />
-			<div class="latitude">
-				<p><%= todo_item.latitude %></p>
+<div class="todo-item position" value="<%= todo_item.position%>" data-ar-id="<%=todo_item.id%>">
+		
+		<div class="todo-item-bar">
+			<div class="todo-item-title">
+				<h3><%= link_to todo_item.name, "#" %></h3>
 			</div>
-			<div class="longitude">	
-				<p><%= todo_item.longitude %></p>
+			<!-- This is for the heart button next to each
+			todo-item -->
+			<div class="like-button">
+				<%= link_to image_tag('Heart_icon_red_hollow.png', :width => 20, :height => 20),like_todo_item_path(todo_item.id), :remote => true, :method => :post %> 
+			</div>
+			<!-- end of heart button -->
+		</div>
+		<div class="toggle-comments">	
+			<div class="location-box">
+				Location: <%= todo_item.destination.name %><br />
+				<div class="latitude">
+					<p><%= todo_item.latitude %></p>
+				</div>
+				<div class="longitude">	
+					<p><%= todo_item.longitude %></p>
+				</div>
+			</div>
+			<!-- Create a div for all the item's comments. This div
+			will have a unique identifier equal to the id of the todo
+			item. This way, when I append the comment to a todo-item, I 
+			can append it to the ".comments" div with the right todo_item id-->
+			<div class="comments-<%=todo_item.id%>">
+				<!-- iterate through each comment, and render the partial for each comment -->
+				<% todo_item.comments.each do |comment| %>
+					<%= render comment %>
+				<% end %>
+			</div>
+			<!-- render the comment form, passing the todo_item id so the new comment
+			will know which todo_item it belongs to -->
+				<%= render :partial => 'comments/form', :locals => { :item => todo_item,  } %>
+
+			<div class="info">
+				Submitted <%= distance_of_time_in_words(Time.now, todo_item.created_at) %> ago
 			</div>
 		</div>
-		<div class="comments-<%=todo_item.id%>">
-
-			<% todo_item.comments.each do |comment| %>
-				<%= render comment %>
-			<% end %>
-		</div>
-			<%= render :partial => 'comments/form', :locals => { :item => todo_item } %>
-
-		<div class="info">
-			<%= todo_item.created_at %>
-		</div>
-	</div>
 </div>
 
