@@ -2,8 +2,7 @@
 	<h3>New Todo Item</h3>
 </div>
 
-<!-- Create a new Todo Item. On pressing submit, 'remote => true' will send off an ajax request to 
-	Todo_items.js. It will also execute the create action in the Todo_items controller, sending all the form info to the controller in a params hash -->
+<!-- Create a new Todo Item. On pressing submit, 'remote => true' will send off an ajax request to Todo_items.js. It will also execute the create action in the Todo_items controller, sending all the form info to the controller in a params hash -->
 <%= form_for TodoItem.new, :remote => true do |f| %>
 
 	<div class="field">
